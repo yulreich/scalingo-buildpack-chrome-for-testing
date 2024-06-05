@@ -26,4 +26,11 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 
 If you keep the default settings and run on scalingo-22, this should work as-is.
 
+To find the paths specified above, you can use the following commands:
+
+```
+scalingo run --app <app_name> "whereis chrome"
+scalingo run --app <app_name> "whereis chromedriver"
+```
+
 Best of luck!
