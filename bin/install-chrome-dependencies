@@ -17,7 +17,7 @@ topic "Installing Chrome dependencies"
 # The package list is validated by bin/test.sh - see its output to identify any missing libraries.
 # Also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
 case "${STACK}" in
-  "heroku-20" | "heroku-22")
+  "heroku-20" | "heroku-22" | "scalingo-22")
     PACKAGES="
       gconf-service
       libappindicator1
@@ -62,7 +62,7 @@ case "${STACK}" in
     "
     ;;
   *)
-    error "STACK must be 'heroku-20', 'heroku-22' or 'heroku-24', not '${STACK}'."
+    error "STACK must be 'heroku-20', 'heroku-22', 'heroku-24' or 'scalingo-22', not '${STACK}'."
 esac
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
